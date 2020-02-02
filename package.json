@@ -1,0 +1,104 @@
+{
+    "name": "electron-react-webpack-boilerplate",
+    "version": "1.0.0",
+    "main": "electron/electron-start.js",
+    "license": "MIT",
+    "homepage": "./",
+    "author": {
+        "name": "Vyira Software Solutions",
+        "email": "vyiragroup@gmail.com",
+        "url": "https://xtrudelab.com/"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --mode development --open --hot",
+        "react": "",
+        "electron": "cross-env NODE_ENV=dev nodemon --exec \"\"electron .\"\"",
+        "build": "webpack --mode production",
+        "dist": "electron-builder",
+        "publish": "",
+        "clean": "rimraf ./build && rimraf ./dist && rimraf ./release && rimraf ./publish"
+    },
+    "keywords": [
+        "electron",
+        "electronjs",
+        "react",
+        "reactjs",
+        "mongodb",
+        "mongoose",
+        "webpack",
+        "electron-builder",
+        "redux",
+        "react-redux"
+    ],
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.8.4",
+        "@babel/preset-env": "^7.8.4",
+        "@babel/preset-react": "^7.8.3",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.0.6",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "concurrently": "^5.1.0",
+        "cross-env": "^7.0.0",
+        "css-loader": "^3.4.2",
+        "electron": "^7.1.11",
+        "electron-builder": "^22.3.2",
+        "electron-is-dev": "^1.1.0",
+        "electron-reload": "^1.5.0",
+        "file-loader": "^5.0.2",
+        "html-webpack-plugin": "^3.2.0",
+        "jshint": "^2.11.0",
+        "node-sass": "^4.13.1",
+        "nodemon": "^2.0.2",
+        "npm-run-all": "^4.1.5",
+        "sass-loader": "^8.0.2",
+        "style-loader": "^1.1.3",
+        "wait-on": "^4.0.0",
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.10.2"
+    },
+    "dependencies": {
+        "mongodb": "^3.5.2",
+        "mongoose": "^5.8.11",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "react-redux": "^7.1.3",
+        "react-router": "^5.1.2",
+        "redux": "^4.0.5",
+        "redux-thunk": "^2.3.0"
+    },
+    "build": {
+        "appId": "com.vyira",
+        "productName": "${name}",
+        "copyright": "Copyright © 2020 ${author}",
+        "nsis": {
+            "perMachine": "false",
+            "oneClick": "false",
+            "artifactName": "${name}-setup-win-${version}.${ext}",
+            "allowToChangeInstallationDirectory": "true",
+            "deleteAppDataOnUninstall": "true"
+        },
+        "msi": {
+            "artifactName": "${name}-setup-win-${version}.${ext}",
+            "oneClick": "false"
+        },
+        "win": {
+            "target": [
+                "nsis"
+            ],
+            "icon": "./electron/icon.png"
+        },
+        "files": [
+            "src/**/*",
+            "electron/**/*",
+            "node_modules/**/*",
+            "./index.js"
+        ],
+        "directories": {
+            "buildResources": "build",
+            "output":"dist"
+        }
+    }
+}
