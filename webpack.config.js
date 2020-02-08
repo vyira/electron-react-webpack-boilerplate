@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
-const isDev = require('electron-is-dev')
+const isDev = false
 
 module.exports = {
+    mode: isDev ? 'development' : 'production',
     watch: isDev ? true : false,
     target: 'electron-renderer',
     entry: './src/index.js',
@@ -10,6 +11,12 @@ module.exports = {
         path: path.join(__dirname, 'build'),
         publicPath: path.join('.'),
         filename: 'js/bundle.[Hash].js'
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'build'),
+        compress: true,
+        port: 9000,
+        hot: true
     },
     module: {
         rules: [
@@ -24,11 +31,11 @@ module.exports = {
                 exclude: /node_modeule/
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.(sa|sc|c)ss$/,
                 use: [
-                    'style-loader',
                     'css-loader',
                     'sass-loader',
+                    'style-loader'
                 ],
             },
             {

@@ -8,9 +8,7 @@ const handleClick = (e) => {
 
 function App() {
     return (
-        <div className='App'>
-            <h1>Your App Will Load Here</h1>
-        </div>
+        <div className="main">Awatansa</div>
     )
 }
 

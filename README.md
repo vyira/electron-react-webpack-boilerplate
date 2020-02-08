@@ -1,5 +1,5 @@
 # electron-react-webpack-boilerplate
-This is the basic Boilerplate for creating applications with Electron React. Please feel free to use this.<br/>
+This is the basic/minimal Boilerplate for creating applications with Electron React. Please feel free to use this.<br/>
 Configurations are specific for windows platform, however you can customise your platform settings for bulding this application as per your wish.
 
 ## Scripts
