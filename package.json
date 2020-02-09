@@ -11,12 +11,13 @@
     },
     "scripts": {
         "start": "concurrently \"yarn react\" \"wait-on http://localhost:9000/ && yarn electron\" --kill-others",
-        "react": "webpack-dev-server --mode development --open --hot",
-        "electron": "cross-env NODE_ENV=dev nodemon --exec \"\"electron .\"\"",
-        "build": "webpack --mode production",
+        "react": "webpack-dev-server --mode development",
+        "electron": "cross-env NODE_ENV=development nodemon --watch ./electron/**/* --exec \"yarn ele\"",
+        "build": "cross-env NODE_ENV=production webpack --mode production",
         "dist": "electron-builder",
         "publish": "",
-        "clean": "rimraf ./build && rimraf ./dist && rimraf ./release && rimraf ./publish"
+        "clean": "rimraf ./build && rimraf ./dist && rimraf ./release && rimraf ./publish",
+        "ele": "electron ."
     },
     "keywords": [
         "electron",
@@ -42,12 +43,13 @@
         "concurrently": "^5.1.0",
         "cross-env": "^7.0.0",
         "css-loader": "^3.4.2",
-        "electron": "^7.1.11",
+        "electron": "^8.0.0",
         "electron-builder": "^22.3.2",
         "electron-is-dev": "^1.1.0",
         "electron-reload": "^1.5.0",
         "file-loader": "^5.0.2",
         "html-webpack-plugin": "^3.2.0",
+        "image-webpack-loader": "^6.0.0",
         "jshint": "^2.11.0",
         "mini-css-extract-plugin": "^0.9.0",
         "node-sass": "^4.13.1",
@@ -59,7 +61,7 @@
         "wait-on": "^4.0.0",
         "webpack": "^4.41.5",
         "webpack-cli": "^3.3.10",
-        "webpack-dev-server": "^3.10.2"
+        "webpack-dev-server": "^3.10.3"
     },
     "dependencies": {
         "mongodb": "^3.5.2",
