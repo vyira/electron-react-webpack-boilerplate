@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
-const isDev = false
+const isDev = process.env.NODE_ENV === 'development' ? true : false
 
 module.exports = {
     mode: isDev ? 'development' : 'production',
@@ -22,24 +22,25 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel-loader',
+                use: 'babel-loader',
                 exclude: /node_modeule/
             },
             {
                 test: /\.js?$/,
-                loader: 'babel-loader',
+                use: 'babel-loader',
                 exclude: /node_modeule/
             },
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
+                    'style-loader',
                     'css-loader',
-                    'sass-loader',
-                    'style-loader'
+                    'sass-loader'
                 ],
+                exclude: /node_modeule/
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|jpeg|gif|svg)$/,
                 loader: 'file-loader',
                 query: {
                     name: '[name].[ext]?[hash]'
