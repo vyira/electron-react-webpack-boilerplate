@@ -8,7 +8,7 @@ Please Modify your scripts as per your requirements.
 
 ### `yarn start` 
 
-Start your Application with launching React Development Server being loaded in electron Desktop UI.
+Start your Application with launching React Development Server being loaded in Electron Desktop UI.
 
 ### `yarn electron` 
 
