@@ -3,5 +3,6 @@ build/
 dist/
 publish/
 release/
+scripts/
 yarn.lock
 yarn-error.log
