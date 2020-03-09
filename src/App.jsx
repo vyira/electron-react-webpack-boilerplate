@@ -8,7 +8,7 @@ const handleClick = (e) => {
 
 function App() {
     return (
-        <div className="main"><h1>Electron React Webpack - Boilerplate</h1></div>
+        <div className="App"><h1>Electron React Webpack - Boilerplate</h1></div>
     )
 }
 

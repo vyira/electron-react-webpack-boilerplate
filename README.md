@@ -18,7 +18,7 @@ Start Electron Window Only
 
 ### `yarn react` 
 
-Start Development React Server only
+Start React Development Server only
 
 ### `yarn build` 
 
