@@ -110,5 +110,9 @@
             "buildResources": "build",
             "output": "dist"
         }
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/vyira/electron-react-webpack-boilerplate.git"
     }
 }
