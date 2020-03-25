@@ -3,12 +3,12 @@ import './App.scss'
 import { ipcRenderer } from 'electron'
 
 const handleClick = (e) => {
-    console.log(ipcRenderer.send('event', { e: e }))
+    console.log(ipcRenderer.send('event', 'console-log'))
 }
 
 function App() {
     return (
-        <div className="App"><h1>Electron React Webpack - Boilerplate</h1></div>
+        <button onClick={handleClick}>Pop-Up</button>
     )
 }
 

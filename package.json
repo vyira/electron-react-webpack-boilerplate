@@ -1,7 +1,7 @@
 {
     "name": "electron-react-webpack-boilerplate",
     "version": "1.0.0",
-    "main": "electron/electron-start.js",
+    "main": "./src/electron/electron-start.js",
     "license": "MIT",
     "homepage": "./",
     "author": {
@@ -10,10 +10,10 @@
         "url": "https://xtrudelab.com/"
     },
     "scripts": {
-        "start": "concurrently \"yarn react\" \"wait-on http://localhost:9000/ && yarn electron\" --kill-others",
+        "start": "concurrently \"yarn react\" \"wait-on http://localhost:3000/ && yarn electron\" --kill-others",
         "react": "webpack-dev-server --config ./scripts/webpack.config.dev.js",
-        "electron": "cross-env NODE_ENV=development \"yarn electron .\"",
-        "build": "webpack",
+        "electron": "electron .",
+        "build": "webpack --config ./scripts/webpack.config.js",
         "dist": "electron-builder",
         "publish": "",
         "clean": "rimraf ./build && rimraf ./dist && rimraf ./release && rimraf ./publish"
@@ -50,6 +50,7 @@
         "electron-reload": "^1.5.0",
         "eslint": "^6.8.0",
         "eslint-loader": "^3.0.3",
+        "eslint-plugin-react": "^7.19.0",
         "file-loader": "^5.1.0",
         "html-webpack-plugin": "^3.2.0",
         "image-webpack-loader": "^6.0.0",
